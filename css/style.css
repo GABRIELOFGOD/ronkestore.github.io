@@ -4,11 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
     width: 100%;
+    overflow-x: hidden;
 }
 
 .container{
@@ -45,6 +46,14 @@ p{
     color: rgb(185, 185, 185);
 }
 
+.heading .fa-bars{
+    display: none;
+}
+
+#navrad{
+    display: none;
+}
+
 .allbtn{
     padding: 10px 20px;
     text-align: center;
@@ -70,6 +79,7 @@ p{
 
 /*header*/
 .heading{
+    margin: auto;
     width: 100%;
     position: sticky;
     z-index: 999;
@@ -145,7 +155,7 @@ p{
     background-image: url("../imaages/bg/main-bg.jpg");
     background-repeat: no-repeat;
     height: 85vh;
-    width: 100%;
+    width: 100vw;
     background-size: 100vw;
     display: flex;
     flex-direction: column;
@@ -475,14 +485,138 @@ footer .address{
 
 
 /*media querries*/
-@media (max-width: 460px) {
-    .function-itm ul{
-        flex-direction: column;
-        position: absolute;
+@media (max-width: 826px) {
+    .heading {
+        width: 100vw;
+        padding: 20px;
+        margin: 0;
     }
 
-    .sales-ads .divd{
-        display: flex;
+    .heading .fa-bars{
+        display: block;
+        align-items: center;
+        margin: auto;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: .2s ease;
+        clear: both;
+        right: 10px;
+    }
+
+    .heading .fa-bars:hover{
+        color: #ff00ff;
+    }
+
+    .function-itm{
+        position: absolute;
+        right: -150px;
+        top: 50px;
+        background: #e3e6e3;
+        padding: 20px;
+        transition: .4s;
+        z-index: 999;
+    }
+
+    .function-itm ul {
         flex-direction: column;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.12);
+    }
+
+    .heroe {
+        overflow: hidden;
+        display: block;
+        padding: 50px 50px;
+        margin-bottom: 10px;
+        height: 40vh;
+    }
+
+    .bonus {
+        padding: 0 10px;
+        margin: 10px 10px;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .feature .ft-pro {
+        margin: 50px 80px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .feature .ft-pro .pro-cont {
+        width: 35%;
+        height: 48vh;
+        padding: 10px;
+        margin: 55px;
+    }
+
+    .offerAds {
+        height: 30vh;
+        margin: auto;
+    }
+
+    .newsletter h5 {
+        width: 40%;
+    }
+}
+
+@media (max-width: 425px) {
+    .heroe {
+        height: 55vh;
+        background: white;
+    }
+
+    .bonus {
+        flex-direction: column;
+    }
+
+    .feature .ft-pro{
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feature .ft-pro .pro-cont {
+        width: 65%;
+        margin: 10px;
+    }
+
+    .offerAds {
+        height: 12vh;
+        margin: auto;
+    }
+
+    .offerAds h4 {
+        font-size: 1.4rem;
+    }
+
+    .sales-ads .main h3{
+        font-size: 2rem;
+    }
+
+    .sales-ads .divd {
+        flex-direction: column;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .newsletter h5{
+        width: 90%;
+    }
+
+    .newsletter .news-sub {
+        width: 90%;
+    }
+
+    footer .address-ent {
+        flex-direction: column;
+        align-items: start;
+        width: 95%;
     }
 }
